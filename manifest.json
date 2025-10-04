@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Mindful Scrolling",
+  "version": "1.3",
+  "description": "Stay mindful before using Instagram, YouTube, or LinkedIn",
+  "permissions": ["tabs", "storage", "scripting"],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*.jpeg"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.instagram.com/*",
+        "*://*.youtube.com/*",
+        "*://*.youtube.com/watch*",
+        "*://*.youtube.com/shorts/*",
+        "*://*.linkedin.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
